@@ -1,7 +1,6 @@
-version: .2
+version: 0.2
 
 phases:
-
    install:
       runtime-versions:
          java: openjdk8
@@ -22,6 +21,5 @@ phases:
          
    artifacts:
       files:
-         - '/**/*'         
-      base-directory: 'target'
+         - target/**/*
          
