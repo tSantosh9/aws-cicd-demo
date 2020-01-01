@@ -3,14 +3,25 @@ version: 0.2
 phases:
    install:
       runtime-versions:
-         java: openjdk8         
+         java: openjdk8
+   
+   pre_build:
+      commands:
+         - echo "Pre-build phase started"
+         - mvn clean
+         
    build:
       commands:
          - echo "Build initiated"
          - mvn clean package
-   artifacts:
-      files:
-         - target/**/*
-      discard-paths: yes
-      
+         
+   post_build:
+      commands:
+         - echo "Build complete"
+         
+artifacts:
+   files:
+      - target/**/*'
+   discard-paths: yes
+   
          
